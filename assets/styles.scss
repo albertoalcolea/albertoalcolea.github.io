@@ -495,7 +495,7 @@ dl {
 
 .project a {
   .frame {
-    width: 315px;
+    max-width: 315px;
     height: 185px;
     padding: 5px;
     background-color: $white;
