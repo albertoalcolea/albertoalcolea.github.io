@@ -1,2 +1,2 @@
 # albertoalcolea.github.io
-Personal website
+Personal website built with [Jekyll](https://jekyllrb.com/).

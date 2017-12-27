@@ -1,0 +1,766 @@
+---
+---
+
+//
+// IMPORTS
+//
+
+@import "reset";
+@import "variables";
+@import "mixings";
+// Syntax highlighting @import is at the bottom of this file
+
+body {
+  font-family: $sans-serif-font;
+  color: $dark-gray;
+  background-color: $black;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+  &:hover, &:focus, &:active {
+    text-decoration: underline;
+  }
+}
+
+h2 {
+  text-transform: uppercase;
+}
+
+p {
+  margin-bottom: 1em;
+  line-height: 1.6em;
+}
+
+ul, ol {
+  margin-left: 30px;
+  line-height: 1.6em;
+}
+
+.container {
+  max-width: $max-width;
+  width: 90%;
+  margin: 0 auto;
+}
+
+header {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: $header-z-index;
+  height: $header-height;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: $white;
+}
+
+header.shrink {
+  @include box-shadow(0px, 4px, 0px, 0px, rgba(0,0,0,0.08));
+}
+
+header a {
+  color: $dark-gray;
+  font-weight: bold;
+  @include transition(color, .2s);
+  &:hover, &:focus, &:active {
+    text-decoration: none;
+    color: $blue;
+  }
+}
+
+.navbar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.navbar-header {
+  @extend .navbar;
+  float: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 15px;
+
+  @include mobile {
+    float: none;
+    margin-left: 0;
+  }
+}
+
+.navbar-menu {
+  @extend .navbar;
+  float: right;
+  background-color: $white;
+
+  @include mobile {
+  	visibility: hidden;
+  	max-height: 0;
+    float: none;
+    padding-top: 0;
+    padding-bottom: 0;
+		margin-top: 1px;
+    border-top: 4px solid $light-gray;
+    border-bottom: 4px solid $light-gray;
+    overflow-y: hidden;
+    @include transition(all, .2s);
+
+    &.active {
+    	visibility: visible;
+    	max-height: 160px;  // Aprox. max height
+    }
+  }
+}
+
+.navbar-menu ul {
+  line-height: normal;
+
+  @include mobile {
+    margin-left: 0;
+  }
+}
+
+.navbar-menu li {
+  @include mobile {
+    display: block !important;
+    background-color: $white;
+    @include transition(background-color, .2s);
+    &:hover, &:focus {
+      background-color: $lighter-gray;
+    }
+  }
+}
+
+.navbar-menu a {
+  display: block;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @include mobile {
+    padding: 10px;
+  }
+}
+
+.toggle-menu {
+  display: none;
+  float: right;
+  margin-top: -8px;
+  background-color: $black;
+  color: $white;
+  font-size: 16px;
+  padding: 8px 11px;
+  @include border-radius(4px);
+  &:hover, &:focus, &:active {
+    color: $white;
+  }
+
+  @include mobile {
+    display: block;
+  }
+}
+
+.page-content {
+  margin-top: $header-height;
+  background-color: $white;
+}
+
+footer {
+  background-color: $black;
+  color: $white;
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+
+footer h2 {
+  margin-bottom: 19px;
+}
+
+.footer-wrapper {
+  @include clearfix;
+}
+
+.footer-section {
+  vertical-align: top;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  @include tablet {
+    float: none !important;
+
+    &:first-child {
+      margin-bottom: 50px;
+    }
+  }
+
+  @include mobile {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+#social {
+  float: left;
+}
+
+.social-buttons ul li:first-child {
+  padding-left: 0;
+}
+
+.social-buttons a {
+  display: block;
+  color: $darker-gray;
+  font-size: 20px;
+  @include transition(color, .3s);
+  &:hover, &:focus, &:active {
+    color: $dark-gray;
+    text-decoration: none;
+  }
+}
+
+#contact {
+  position: relative;
+  max-width: 400px;
+  float: right;
+}
+
+#contact #greeting {
+  position: absolute;
+  display: none;
+  opacity: 0;
+  width: 370px;
+  z-index: $greeting-z-index;
+  margin-top: 3px;
+  background: $red;
+  color: $white;
+  padding: 24px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+  @include border-radius(7px);
+  @include box-shadow(0, 0, 15px, 0px, rgba(0,0,0,0.55));
+  @include text-shadow(1px, 1px, 1px, rgba(240, 240, 240, 0.3));
+
+  &:before {
+    border-color: $red transparent transparent transparent;
+    border-style: solid;
+    border-width: 10px;
+    bottom: -20px;
+    content: "";
+    left: 190px;
+    position: absolute;
+    width: 1px;
+  }
+}
+
+.contact-form {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.contact-form .field-group {
+  margin-bottom: 15px;
+}
+
+.contact-form label {
+  display: block;
+  padding: 0 0 3px 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: $light-yellow;
+  border: 0;
+  color: $black;
+  line-height: 20px;
+  padding: 7px 10px;
+  width: 95%;
+  @include border-radius(5px);
+  &:focus {
+    background: $white;
+    outline: none;
+  }
+}
+
+.contact-form textarea {
+  height: 80px;
+  resize: vertical;
+  min-height: 40px;
+  max-height: 250px;
+}
+
+.contact-form input[type=submit] {
+  background-color: $red;
+  color: $white;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: bold;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  width: auto;
+  @include transition(background-color, .2s);
+  &:hover, &:focus {
+    background-color: $darker-red;
+  }
+}
+
+.copyright {
+  display: block;
+  margin-top: 20px;
+  font-size: 13px;
+  color: $mid-gray;
+  font-weight: bold;
+}
+
+.list-inline {
+  list-style: none;
+  padding-left: 0;
+  margin-left: -5px;
+
+  > li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+dl {
+  margin-top: 0;
+  margin-bottom: 20px;
+
+  dt, dd {
+    line-height: 1.6em;
+  }
+
+  dt {
+  	font-weight: bold;
+  }
+
+  dd {
+    margin-left: 0;
+  }
+
+  @include no-mobile {
+  	&.dl-horizontal dt {
+	    float: left;
+	    width: 140px;
+	    clear: left;
+	    text-align: left;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	  }
+	  &.dl-horizontal dd {
+	    margin-left: 160px;
+	  }
+  }
+}
+
+.section {
+  @include clearfix;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: $white;
+}
+
+.section-gray {
+  background-color: $lighter-gray;
+}
+
+.section h1, .section h2 {
+  margin-bottom: 1em;
+}
+
+/*************/
+/* PORTFOLIO */
+/*************/
+
+#about-me {
+  @include mobile {
+    text-align: center;
+  }
+}
+
+#about-me .container {
+  max-width: 930px;
+}
+
+#about-me img {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 300px;
+  max-height: 300px;
+  width: 30%;
+  border: 3px solid $lighter-gray;
+  @include border-radius(100%);
+
+  @include mobile {
+    display: inline;
+    width: 100%;
+  }
+}
+
+#about-me #me {
+  display: inline-block;
+  vertical-align: top;
+  width: 61%;
+  margin-top: 40px;
+  margin-left: 7%;
+  margin-bottom: 100px;
+
+  @include tablet {
+    margin-top: 4px;
+  }
+
+  @include mobile {
+    display: block;
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+#about-me #skills {
+  dl {
+    margin-left: 30px;
+
+    dt {
+    	color: $red;
+    	font-weight: normal;
+    }
+
+    @include mobile {
+    	dt {
+    		margin-top: 10px;
+    	}
+    }
+  }
+}
+
+#about-me h1 {
+  font-size: 50px;
+  font-weight: normal;
+  color: $dark-gray;
+  margin-bottom: 10px;
+}
+
+#about-me h3 {
+  font-size: 30px;
+  font-weight: normal;
+  color: $mid-gray;
+  margin-bottom: 40px;
+}
+
+#about-me p, #about-me li {
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+#portfolio h2 {
+  text-transform: none;
+  font-weight: normal;
+  text-align: center;
+  font-size: 30px;
+  color: $dark-gray;
+  margin-bottom: 45px;
+  @include text-shadow(0, 0, 1px, rgba(0,0,0,.3))
+}
+
+.project-list {
+  margin-left: -30px;
+  margin-right: -30px;
+  text-align: center;
+
+  @include mobile {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.project {
+  display: inline-block;
+  width: 100%;
+  max-width: 315px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 60px;
+  vertical-align: top;
+  text-align: center;
+
+  @include mobile {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.project a {
+  .frame {
+    width: 315px;
+    height: 185px;
+    padding: 5px;
+    background-color: $white;
+    line-height: 0;
+    @include multiple-box-shadow(0, 0, 0, 1px, #c0caca, 2px, 2px, 2px, 0, rgba(0,0,0,.1));
+  }
+
+  img {
+    width: 100%;
+    @include opacity(1);
+    @include transition(opacity, .2s);
+  }
+
+  &:hover img, &:focus img, &:active img {
+    @include opacity(0.5);
+  }
+}
+
+.project h3 {
+  margin-top: 10px;
+  margin-bottom: 7px;
+}
+
+.project .tags {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.project p {
+  color: $mid-gray;
+  font-size: 14px;
+  text-align: left;
+  &:last-child {
+    margin-bottom: 5px;
+  }
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 70%;
+  font-weight: bold;
+  line-height: 1;
+  color: $white;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  padding-right: 0.6em;
+  padding-left: 0.6em;
+  color: $white;
+  background-color: $mid-light-gray;
+  @include border-radius(10rem);
+}
+
+/********/
+/* BLOG */
+/********/
+
+.blog .container {
+  max-width: 800px;
+}
+
+.post {
+  margin-bottom: 50px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.post {
+  h1, h2, h3, h4, h5, h6, p, li {
+    // Reset all margins
+    margin: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $sans-serif-font;
+    text-transform: none !important;
+    color: $darker-gray;
+  }
+
+  h1.title {
+    font-size: 40px;
+    line-height: 1;
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+
+  h2.title {
+    font-size: 32px;
+    line-height: 1.15;
+    margin-top: 53px;
+  }
+
+  h2.title:first-child {
+    margin-top: 0;
+  }
+
+  h1 {
+    font-size: 40px;
+    line-height: 1;
+    margin-top: 63px;
+  }
+
+  h2 {
+    font-size: 36px;
+    line-height: 1;
+    margin-top: 60px;
+  }
+
+  h3 {
+    font-size: 32px;
+    line-height: 1.15;
+    margin-top: 53px;
+  }
+
+  h4 {
+    font-size: 26px;
+    line-height: 1.22;
+    margin-top: 39px;
+  }
+
+  h5 {
+    font-size: 24px;
+    line-height: 1.3;
+    margin-top: 34px;
+  }
+
+  h6 {
+    font-size: 22px;
+    line-height: 1.4;
+    margin-top: 30px;
+  }
+
+  p, ul, ol, .read-more {
+    font-family: $serif-font;
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  p, ul, ol {
+    color: $darker-gray;
+    margin-top: 29px;
+  }
+
+  .read-more {
+    display: block;
+    margin-top: 10px;
+  }
+
+  img {
+    display: block;
+    height: auto;
+    margin: 1em 0;
+    max-width: 100%;
+  }
+
+  blockquote {
+    background-color: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin-top: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 8px 10px;
+    quotes: "\201C""\201D";
+
+    &:before {
+      color: #ccc;
+      content: open-quote;
+      font-size: 4em;
+      line-height: 0.1em;
+      margin-right: 0.25em;
+      vertical-align: -0.4em;
+    }
+
+    p {
+      font-style: italic;
+      margin-bottom: 5px;
+      &:first-child {
+        display: inline;
+      }
+    }
+  }
+
+  code {
+    font-family: $monospaced-font;
+    font-size: 17px;
+    padding: 0.2em 0.4em;
+    background-color: rgba(27,31,35,0.05);
+    @include border-radius(3px);
+  }
+
+  .highlight > pre {
+    margin-top: 18px;
+    padding: 15px;
+    font-size: 17px;
+    line-height: 1;
+    line-height: normal;
+    letter-spacing: normal;
+    overflow: auto;
+
+    code {
+      padding: 0;
+      background-color: transparent;
+      @include border-radius(0);
+
+      .gutter.gl {
+        padding-right: 20px; // linenos
+        text-align: right;
+      }
+    }
+  }
+}
+
+.post .date {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-size: 0.85em;
+  color: $mid-gray;
+}
+
+.post hr {
+  background-color: $light-gray;
+  display: block;
+  height: 1px;
+  margin-bottom: 15px;
+}
+
+.related {
+  margin-top: 40px;
+
+  h3 {
+    font-size: 22px;
+    font-weight: normal;
+    color: $mid-gray;
+    margin-top: 0;
+  }
+
+  ul {
+    font-size: 17px;
+    line-height: 1.5;
+    margin-top: 15px;
+  }
+}
+
+.post .comments {
+  margin-top: 32px;
+}
+
+.pagination {
+  margin-top: 40px;
+  text-align: center;
+
+  .pagination-control {
+    display: inline-block;
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: $lighter-gray;
+    padding: 10px 20px;
+    @include border-radius(6px);
+  }
+}
+
+// Settled on moving the import of syntax highlighting to the bottom of the CSS
+// ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
+@import "highlights";

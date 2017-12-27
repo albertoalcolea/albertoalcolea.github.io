@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<div id="about-me" class="section">
+  <div class="container">
+    <img src="{{ site.baseurl }}/assets/img/albertoalcolea.jpg" alt="Alberto Alcolea - @albertoalcolea">
+    <div id="me">
+      <h1>Alberto Alcolea</h1>
+      <h3>Developer and Music Lover</h3>
+      <p>I'm a computer engineer. Passionate about new technologies, software engineering, data processing and the Web. Lover of *NIX systems and Open Source movement.</p>
+    </div>
+    <div id="skills">
+      <p>I consider myself a versatile person who is constantly learning new things: languages, frameworks, methodologies and tools.</p>
+      <p>These are some of the technologies with which I feel comfortable working:</p>
+      <dl class="dl-horizontal">
+        {% for technology in site.data.technologies %}
+        <dt>{{ technology.name }}</dt>
+        <dd>
+          {% for lib in technology.libs %}
+            <span class="tag">{{ lib }}</span>
+          {% endfor %}
+        </dd>
+        {% endfor %}
+      </dl>
+    </div>
+  </div>
+</div>
+
+<div id="portfolio" class="section section-gray">
+  <div class="container">
+    <h2>My work</h2>
+    <div class="project-list">
+      {% for project in site.data.projects %}
+        <div class="project">
+          <a href="{{ project.link }}" title="{{ project.name }}">
+            <figure class="frame">
+              <img src="{{ site.baseurl }}/assets/img/projects/{{ project.image }}" alt="{{ project.name }}">
+            </figure>
+            <h3>{{ project.name }}</h3>
+          </a>
+          <div class="tags">
+            {% for tag in project.tags %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          <p>{{ project.description | newline_to_br }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

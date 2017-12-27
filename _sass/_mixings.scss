@@ -1,0 +1,74 @@
+
+//
+// MIXINGS
+//
+
+//Cross browser CSS3 mixins
+@mixin box-shadow($left, $top, $radius, $spread, $color) {
+  box-shadow: $left $top $radius $spread $color;
+  -webkit-box-shadow: $left $top $radius $spread $color;
+  -moz-box-shadow: $left $top $radius $spread $color;
+}
+
+@mixin multiple-box-shadow($left1, $top1, $radius1, $spread1, $color1, $left2, $top2, $radius2, $spread2, $color2) {
+  box-shadow: $left1 $top1 $radius1 $spread1 $color1, $left2 $top2 $radius2 $spread2 $color2;
+  -webkit-box-shadow: $left1 $top1 $radius1 $spread1 $color1, $left2 $top2 $radius2 $spread2 $color2;
+  -moz-box-shadow: $left1 $top1 $radius1 $spread1 $color1, $left2 $top2 $radius2 $spread2 $color2;
+}
+
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
+    text-shadow: $x $y $blur $color;
+}
+
+@mixin transition($property, $duration, $easing: linear) {
+  transition: $property $duration $easing;
+  -webkit-transition: $property $duration $easing;
+  -moz-transition: $property $duration $easing;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+}
+
+@mixin opacity($value) {
+  $IEValue: $value*100;
+  opacity: $value;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+  filter: alpha(opacity=$IEValue);
+}
+
+// Mobile breakpoints
+@mixin mobile {
+  @media screen and (max-width: $mobile-width) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin no-mobile {
+  @media (min-width: $mobile-width) {
+    @content;
+  }
+}
+
+@mixin no-tablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+// Utilities
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}

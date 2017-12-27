@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<div class="section blog">
+  <div class="container">
+    <article class="post">
+      <h1 class="title">{{ page.title }}</h1>
+
+      <div class="entry">
+        {{ content }}
+      </div>
+
+      <div class="date">
+        Written on {{ page.date | date: "%B %e, %Y" }}
+      </div>
+
+      <hr>
+      {% include sharethis.html %}
+      <div class="related">
+        <h3>Related posts</h3>
+        <ul>
+          {% for post in site.related_posts limit:5 %}
+            <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      {% include disqus.html %}
+    </article>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{% if page.title %}{{ page.title }} | {{ site.name }}{% else %}{{ site.name }} | {{ site.description }}{% endif %}</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    {% include meta.html %}
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Lora" />
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/styles.css" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+    <link rel="shortcut icon" href="{{ site.baseurl }}/assets/img/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/assets/img/favicon.png" />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="navbar-header">
+          <a href="{{ site.baseurl }}/">Alberto Alcolea</a>
+          <a class="toggle-menu" id="navbar-toggle-button" href="#">
+            <i class="fa fa-bars"></i> Menu
+          </a>
+      </div>
+        <nav class="navbar-menu" id="navbar-menu">
+          <ul class="list-inline">
+            <li><a href="{{ site.baseurl }}/#about-me" id="nav-aboutme">About me</a></li>
+            <li><a href="{{ site.baseurl }}/#portfolio" id="nav-mywork">My work</a></li>
+            <li><a href="{{ site.baseurl }}/blog" id="nav-blog">Blog</a></li>
+            <li><a href="#contact" id="nav-contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="page-content">
+      {{ content }}
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="footer-wrapper">
+          <div class="footer-section" id="contact">
+            <span id="greeting">Drop me a line! :)</span>
+            <h2>Contact me</h2>
+            {% include contact-form.html %}
+          </div>
+          <div class="footer-section" id="social">
+            <h2>Social</h2>
+            {% include social-buttons.html %}
+            <p class="copyright">© {{ 'now' | date: "%Y" }} Alberto Alcolea</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/main.js"></script>
+
+    {% include analytics.html %}
+  </body>
+</html>
