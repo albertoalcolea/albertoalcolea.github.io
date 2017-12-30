@@ -781,6 +781,12 @@ dl {
   margin-top: 32px;
 }
 
+.social-share .stButton {
+  @include mobile {
+    margin-bottom: 4px;
+  }
+}
+
 .pagination {
   margin-top: 40px;
   text-align: center;
