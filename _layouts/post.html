@@ -16,7 +16,14 @@ layout: default
       </div>
 
       <hr>
-      {% include sharethis.html %}
+
+      {% if site.sharethis %}
+      <div class="social-share">
+        {% include sharethis.html %}
+      </div>
+      {% endif %}
+
+      {% if site.related_posts != empty %}
       <div class="related">
         <h3>Related posts</h3>
         <ul>
@@ -25,8 +32,13 @@ layout: default
           {% endfor %}
         </ul>
       </div>
+      {% endif %}
 
-      {% include disqus.html %}
+      {% if site.disqus %}
+      <div class="comments">
+        {% include disqus.html %}
+      </div>
+      {% endif %%}
     </article>
   </div>
 </div>

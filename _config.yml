@@ -21,7 +21,7 @@ name: Alberto Alcolea
 author: Alberto Alcolea
 
 # Short bio or description (displayed in the header)
-description: Software Engineer
+description: Developer and Music Lover
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
@@ -34,7 +34,7 @@ url: "http://albertoalcolea.com"
 baseurl: "" # the subpath of your site, e.g. /blog
 
 # Permalink
-permalink: /blog/:year/:month/:day/:title/
+permalink: /blog/:title/
 
 # Pagination
 paginate: 5
