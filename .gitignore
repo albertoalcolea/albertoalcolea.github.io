@@ -1,5 +1,6 @@
 _site
 _drafts
+_local
 .jekyll
 .jekyll-metadata
 .bundle
