@@ -22,11 +22,11 @@ $(document).ready(function() {
   // Contact me animation
   $('#nav-contact').click(function(e) {
     e.preventDefault();
-    $('#greeting').animate({top: '0', opacity: '0'});
+    $('#greeting').animate({top: '35px', opacity: '0'});
     $('html, body').animate({scrollTop: $(this.hash).offset().top}, 300, function() {
       $('#greeting').show();
-      $('#greeting').animate({top: '-45px', opacity: '1'}, 300, function() {
-        $('#greeting').delay(1500).animate({top: '-100px', opacity: '0'}, 300);
+      $('#greeting').animate({top: '10px', opacity: '1'}, 300, function() {
+        $('#greeting').delay(1500).animate({top: '-85px', opacity: '0'}, 300);
       });
     });
   });

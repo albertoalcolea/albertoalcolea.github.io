@@ -163,8 +163,6 @@ header a {
 footer {
   background-color: $black;
   color: $white;
-  padding-top: 50px;
-  padding-bottom: 40px;
 }
 
 footer h2 {
@@ -179,12 +177,14 @@ footer h2 {
   vertical-align: top;
   padding-left: 30px;
   padding-right: 30px;
+  padding-top: 50px;
+  padding-bottom: 40px;
 
   @include tablet {
     float: none !important;
 
     &:first-child {
-      margin-bottom: 50px;
+      padding-bottom: 0;
     }
   }
 
