@@ -22,6 +22,7 @@ $(document).ready(function() {
   // Contact me animation
   $('#nav-contact').click(function(e) {
     e.preventDefault();
+    this.blur();
     $('#greeting').animate({top: '35px', opacity: '0'});
     $('html, body').animate({scrollTop: $(this.hash).offset().top}, 300, function() {
       $('#greeting').show();
