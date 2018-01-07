@@ -155,6 +155,21 @@ header a {
   }
 }
 
+.toggle-icon {
+  display: inline-block;
+
+  .icon-bar {
+    display: block;
+    width: 14px;
+    height: 2px;
+    background-color: $white;
+
+    +.icon-bar {
+      margin-top: 3px;
+    }
+  }
+}
+
 .page-content {
   margin-top: $header-height;
   background-color: $white;
