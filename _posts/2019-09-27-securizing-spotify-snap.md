@@ -27,7 +27,7 @@ owner @{HOME}/ r,
 
 That rule gives Spotify privileges to **read all your home directory**. I mean your `$HOME` for your own user **recursively with all subdirectories and files stored in it**.
 
-I guess that the purpose to include that privile is to support the Spotify's feature to [add your local audio files](https://support.spotify.com/us/using_spotify/features/listen-to-local-files/) in your playlists, but this gives it privileges too high for what we might expect from a streaming music player, especially considering that it is a non-open source application and we don't know what it really does. Personally, I've never used it and I don't need it. I have a big collection of ripped CD in flac and I'm fine using another music player to play them, meanwhile I use Spotify just for music streaming.
+I guess that the purpose to include that privile is to support the Spotify's feature to [add your local audio files](https://support.spotify.com/us/using_spotify/features/listen-to-local-files/) in your playlists, but this gives it privileges too high for what we might expect from a streaming music player, especially considering that it is a non-open source application and we don't know what it really does. Personally, I've never used this feature and I don't need it. I have a big collection of ripped CD in flac and I'm fine using another music player to play them, meanwhile I use Spotify just for music streaming.
 
 If we don't want Spotify to read any file from our `$HOME` directory, we can just comment that line:
 
