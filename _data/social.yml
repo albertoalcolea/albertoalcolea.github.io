@@ -4,10 +4,6 @@
   url: https://github.com/albertoalcolea
   icon: fa-github
 
-- name: StackOverflow
-  url: https://stackexchange.com/users/12555288
-  icon: fa-stack-overflow
-
 - name: Twitter
   url: https://twitter.com/albertoalcolea
   icon: fa-twitter
