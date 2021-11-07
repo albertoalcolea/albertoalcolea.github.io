@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 
 # Name of your site (displayed in the header)
-name: Alberto Alcolea
+title: Alberto Alcolea
 
 # Author
 author: Alberto Alcolea

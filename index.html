@@ -2,27 +2,13 @@
 layout: default
 ---
 
-<div id="about-me" class="section">
+<div id="about-me" class="section section-intro">
   <div class="container">
     <img src="{{ site.baseurl }}/assets/img/albertoalcolea.jpg" alt="Alberto Alcolea - @albertoalcolea">
     <div id="me">
       <h1>Alberto Alcolea</h1>
-      <h3>Developer and Music Lover</h3>
+      <span id="sub">Developer and Music Lover</span>
       <p>I'm a computer engineer. Passionate about new technologies, software engineering, data processing and the Web. Lover of *NIX systems.</p>
-    </div>
-    <div id="skills">
-      <p>I consider myself a versatile person who is constantly learning new things: languages, frameworks, methodologies and tools.</p>
-      <p>These are some of the technologies with which I feel comfortable working:</p>
-      <dl class="dl-horizontal">
-        {% for technology in site.data.technologies %}
-        <dt>{{ technology.name }}</dt>
-        <dd>
-          {% for lib in technology.libs %}
-            <span class="tag">{{ lib }}</span>
-          {% endfor %}
-        </dd>
-        {% endfor %}
-      </dl>
     </div>
   </div>
 </div>
