@@ -1,0 +1,31 @@
+<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "BlogPosting",
+				"@id": "{{ site.url }}{{ page.url }}#post",
+				"name": "{{ page.title }} | {{ site.title }}",
+				"description": "{{ page.excerpt | strip_html | strip_newlines }}",
+				"headline": "{{ page.title }} | {{ site.title }}",
+				{% if page.keywords -%}
+				"keywords": "{{ page.keywords }}",
+				{%- endif -%}
+				"datePublished": "{{ page.date | date_to_xmlschema }}",
+				"author": {
+					"@id": "{{ site.url }}/#person"
+				},
+				"publisher": {
+					"@id": "{{ site.url }}/#person"
+				},
+				"isPartOf": {
+					"@id": "{{ site.url }}/#webpage"
+				},
+				"mainEntityOfPage": {
+					"@id": "{{ site.url }}/#webpage"
+				},
+				"inLanguage": "{{ site.language }}"
+			}
+		]
+	}
+</script>

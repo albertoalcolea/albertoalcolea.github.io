@@ -32,3 +32,9 @@
 {%- endif %}
 
 <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
+
+{% if page.schema == 'person' -%}
+	{%- include schema-person.html -%}
+{%- elsif page.schema == 'post' -%}
+	{%- include schema-post.html -%}
+{%- endif -%}

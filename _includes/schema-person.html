@@ -1,0 +1,57 @@
+<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "ImageObject",
+				"@id": "{{ site.url }}{{ site.data.me.image_path }}",
+				"url": "{{ site.url }}{{ site.data.me.image_path }}",
+				"caption": "{{ site.title }}",
+				"inLanguage": "{{ site.language }}"
+			},
+			{
+				"@type": "Person",
+				"@id": "{{ site.url }}/#person",
+				"name": "{{ site.author }}",
+				"jobTitle": "{{ site.data.me.jobTitle }}",
+				"gender": "{{ site.data.me.gender }}",
+				"alumniOf": "{{ site.data.me.alumniOf }}",
+				"url": "{{ site.url }}",
+				"sameAs": [
+					{% for social in site.data.social -%}
+						"{{ social.url }}"{% if forloop.last == false %},{% endif %}
+					{% endfor -%}
+				],
+				"image": {
+					"@id": "{{ site.url }}{{ site.data.me.image_path }}"
+				}
+			},
+			{
+				"@type": "WebSite",
+				"@id": "{{ site.url }}/#website",
+				"url": "http://albertoalcolea.com",
+				"name": "Alberto Alcolea",
+				"publisher": {
+					"@id": "{{ site.url }}/#person"
+				},
+				"inLanguage": "{{ site.language }}"
+			},
+			{
+				"@type": "WebPage",
+				"@id": "{{ site.url }}/#webpage",
+				"url": "{{ site.url }}",
+				"name": "{{ site.title }}",
+				"author": {
+					"@id": "{{ site.url }}/#person"
+				},
+				"isPartOf": {
+					"@id": "{{ site.url }}/#website"
+				},
+				"primaryImageOfPage": {
+					"@id": "{{ site.url }}{{ site.data.me.image_path }}"
+				},
+				"inLanguage": "{{ site.language }}"
+			}
+		]
+	}
+</script>
