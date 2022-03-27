@@ -1,15 +1,3 @@
 {% if site.sharethis %}
-<script type="text/javascript" src="//ws.sharethis.com/button/buttons.js"></script>
-<script type="text/javascript">
-  stLight.options({
-    publisher: '{{ site.sharethis }}',
-    doNotHash: false,
-    doNotCopy: false,
-    hashAddressBar: false,
-    shorten: false,
-  });
-</script>
-<span class='st_facebook_hcount' displayText='Facebook'></span>
-<span class='st_twitter_hcount' displayText='Tweet' st_via='{{ site.twitter }}'></span>
-<span class='st_linkedin_hcount' displayText='LinkedIn'></span>
+<div class="sharethis-inline-share-buttons"></div>
 {% endif %}
