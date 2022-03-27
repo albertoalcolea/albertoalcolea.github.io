@@ -1,80 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+	<head>
+		<title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-    {% include meta.html %}
+		{% include meta.html %}
 
-    <!--[if lt IE 9]>
-      <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <![endif]-->
+		<!--[if lt IE 9]>
+			<script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/styles.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
-    <link rel="shortcut icon" href="{{ site.baseurl }}/assets/img/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/assets/img/favicon.png" />
+		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/styles.css" />
+		<link rel="alternate" type="application/rss+xml" title="{{ site.title }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+		<link rel="shortcut icon" href="{{ site.baseurl }}/assets/img/favicon.ico" />
+		<link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/assets/img/favicon.png" />
 
-    <noscript>
-      <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/noscript.css" />
-    </noscript>
-  </head>
+		<noscript>
+			<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/noscript.css" />
+		</noscript>
+	</head>
 
-  <body>
-    <header>
-      <div class="container">
-        <div class="navbar-header">
-          <a href="{{ site.baseurl }}/">Alberto Alcolea</a>
-          <a class="toggle-menu" id="navbar-toggle-button" href="#">
-            <div class="toggle-icon">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </div>
-            Menu
-          </a>
-      </div>
-        <nav class="navbar-menu" id="navbar-menu">
-          <ul class="list-inline">
-            <li><a href="{{ site.baseurl }}/#about-me" id="nav-aboutme">About me</a></li>
-            <li><a href="{{ site.baseurl }}/#portfolio" id="nav-mywork">My work</a></li>
-            <li><a href="{{ site.baseurl }}/blog" id="nav-blog">Blog</a></li>
-            <li><a href="#contact" id="nav-contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+	<body>
+		<header>
+			<div class="container">
+				<div class="navbar-header">
+					<a href="{{ site.baseurl }}/">Alberto Alcolea</a>
+					<a class="toggle-menu" id="navbar-toggle-button" href="#">
+						<div class="toggle-icon">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</div>
+						Menu
+					</a>
+			</div>
+				<nav class="navbar-menu" id="navbar-menu">
+					<ul class="list-inline">
+						<li><a href="{{ site.baseurl }}/#about-me" id="nav-aboutme">About me</a></li>
+						<li><a href="{{ site.baseurl }}/#portfolio" id="nav-mywork">My work</a></li>
+						<li><a href="{{ site.baseurl }}/blog" id="nav-blog">Blog</a></li>
+						<li><a href="#contact" id="nav-contact">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
 
-    <div class="page-content">
-      {{ content }}
-    </div>
+		<div class="page-content">
+			{{ content }}
+		</div>
 
-    <footer>
-      <div class="container">
-        <div class="footer-wrapper">
-          <div class="footer-section" id="contact">
-            <span id="greeting">Drop me a line! :)</span>
-            <span class="footer-title">Contact me</span>
-            {% include contact-form.html %}
-          </div>
-          <div class="footer-section" id="social">
-            <span class="footer-title">Social</span>
-            {% include social-buttons.html %}
-            <p class="copyright">© {{ 'now' | date: "%Y" }} Alberto Alcolea</p>
-          </div>
-        </div>
-      </div>
-    </footer>
+		<footer>
+			<div class="container">
+				<div class="footer-wrapper">
+					<div class="footer-section" id="contact">
+						<span id="greeting">Drop me a line! :)</span>
+						<span class="footer-title">Contact me</span>
+						{% include contact-form.html %}
+					</div>
+					<div class="footer-section" id="social">
+						<span class="footer-title">Social</span>
+						{% include social-buttons.html %}
+						<p class="copyright">© {{ 'now' | date: "%Y" }} Alberto Alcolea</p>
+					</div>
+				</div>
+			</div>
+		</footer>
 
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700,400italic,700italic" />
-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700,400italic,700italic" />
+		<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="{{ site.baseurl }}/assets/main.js"></script>
+		<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script src="{{ site.baseurl }}/assets/main.js"></script>
 
-    {% include analytics.html %}
-  </body>
+		{% include analytics.html %}
+	</body>
 </html>

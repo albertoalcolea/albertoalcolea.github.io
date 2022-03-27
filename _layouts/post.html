@@ -3,42 +3,42 @@ layout: default
 ---
 
 <div class="section blog">
-  <div class="container">
-    <article class="post">
-      <h1 class="title">{{ page.title }}</h1>
+	<div class="container">
+		<article class="post">
+			<h1 class="title">{{ page.title }}</h1>
 
-      <div class="entry">
-        {{ content }}
-      </div>
+			<div class="entry">
+				{{ content }}
+			</div>
 
-      <div class="date">
-        Written on {{ page.date | date: "%B %e, %Y" }}
-      </div>
+			<div class="date">
+				Written on {{ page.date | date: "%B %e, %Y" }}
+			</div>
 
-      <hr>
+			<hr>
 
-      {% if site.sharethis %}
-      <div class="social-share">
-        {% include sharethis.html %}
-      </div>
-      {% endif %}
+			{% if site.sharethis %}
+			<div class="social-share">
+				{% include sharethis.html %}
+			</div>
+			{% endif %}
 
-      {% if site.related_posts != empty %}
-      <div class="related">
-        <h3>Related posts</h3>
-        <ul>
-          {% for post in site.related_posts limit:5 %}
-            <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-      {% endif %}
+			{% if site.related_posts != empty %}
+			<div class="related">
+				<h3>Related posts</h3>
+				<ul>
+					{% for post in site.related_posts limit:5 %}
+						<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
+			{% endif %}
 
-      {% if site.disqus %}
-      <div class="comments">
-        {% include disqus.html %}
-      </div>
-      {% endif %%}
-    </article>
-  </div>
+			{% if site.disqus %}
+			<div class="comments">
+				{% include disqus.html %}
+			</div>
+			{% endif %%}
+		</article>
+	</div>
 </div>

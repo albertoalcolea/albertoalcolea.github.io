@@ -7,34 +7,34 @@
 @import "mixings";
 
 header {
-  @include box-shadow(0px, 4px, 0px, 0px, rgba(0,0,0,0.08));
+	@include box-shadow(0px, 4px, 0px, 0px, rgba(0,0,0,0.08));
 
-  @include mobile {
-    position: static;
-    height: auto;
-  }
+	@include mobile {
+		position: static;
+		height: auto;
+	}
 }
 
 .navbar-menu {
-  @include mobile {
-    visibility: visible;
-    max-height: none;
-    display: block;
-  }
+	@include mobile {
+		visibility: visible;
+		max-height: none;
+		display: block;
+	}
 }
 
 .toggle-menu {
-  @include mobile {
-    display: none;
-  }
+	@include mobile {
+		display: none;
+	}
 }
 
 .page-content {
-  @include mobile {
-    margin-top: 0;
-  }
+	@include mobile {
+		margin-top: 0;
+	}
 }
 
 #contact-form {
-  display: none;
+	display: none;
 }
