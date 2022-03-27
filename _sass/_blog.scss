@@ -201,18 +201,19 @@
 		margin: 0;
 	}
 
-	.share-msg {
-		display: block;
-		position: absolute;
-		right: 130px;
-		height: 32px;
-		font-size: 0.85em;
-		color: $mid-gray;
-		line-height: 32px;
+	// Hack to show `Share: ` only when ShareThis works. It may fail with some anti-track systems
+	.sharethis-inline-share-buttons:not(:empty) {
+		&:before {
+			content: 'Share: ';
+			font-family: $sans-serif-font;
+			font-size: 0.85em;
+			color: $mid-gray;
+			line-height: 32px;
+			padding-right: 1em;
 
-		@include mobile {
-			left: 0;
-			right: 0;
+			@include mobile {
+				float: left;
+			}
 		}
 	}
 }
