@@ -1,4 +1,4 @@
-<meta name="author" content="{{ site.name }}" />
+<meta name="author" content="{{ site.author }}" />
 
 {% if page.excerpt -%}
 <meta name="description" content="{{ page.excerpt| strip_html | strip }}" />
@@ -12,8 +12,8 @@
 <meta property="og:title" content="{{ page.title }}" />
 <meta property="twitter:title" content="{{ page.title }}" />
 {%- else -%}
-<meta property="og:title" content="{{ site.name }}" />
-<meta property="twitter:title" content="{{ site.name }}" />
+<meta property="og:title" content="{{ site.title }}" />
+<meta property="twitter:title" content="{{ site.title }}" />
 {%- endif %}
 
 <meta name="twitter:card" content="summary" />
@@ -21,7 +21,7 @@
 <meta name="twitter:creator" content="@{{ site.twitter | replace:'@','' }}" />
 <meta name="twitter:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
 
-<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:site_name" content="{{ site.title }}">
 <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
 
 {% if page.date -%}
@@ -32,6 +32,10 @@
 {%- endif %}
 
 <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
+
+{% if page.robots -%}
+<meta name="robots" content="{{ page.robots }}" />
+{%- endif %}
 
 {% if page.schema == 'person' -%}
 	{%- include schema-person.html -%}

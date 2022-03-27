@@ -39,6 +39,12 @@
   filter: alpha(opacity=$IEValue);
 }
 
+@mixin border-box {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
 // Mobile breakpoints
 @mixin mobile {
   @media screen and (max-width: $mobile-width) {

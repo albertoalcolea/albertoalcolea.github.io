@@ -40,6 +40,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 permalink: /blog/:title/
 
 # Pagination
+# Pagination works when called from within the HTML file, named index.html, which
+# optionally may reside in and produce pagination from within a subdirectory, via the
+# paginate_path configuration value.
 paginate: 5
 paginate_path: "/blog/page:num/"
 
@@ -64,6 +67,8 @@ defaults:
       type: 'pages'
     values:
       layout: 'page'
+      schema: 'page'
+      robots: 'follow, index'
   -
     scope:
       path: ''
@@ -71,6 +76,7 @@ defaults:
     values:
       layout: 'post'
       schema: 'post'
+      robots: 'follow, index'
 
 # Build settings
 markdown: kramdown

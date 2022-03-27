@@ -1,0 +1,207 @@
+
+/*************/
+/* PORTFOLIO */
+/*************/
+
+.section-intro {
+	background-color: $black;
+	color: $white;
+}
+
+.section-gray {
+	background-color: $lighter-gray;
+}
+
+#about-me {
+	@include mobile {
+		text-align: center;
+	}
+}
+
+#about-me .container {
+	max-width: 930px;
+}
+
+#about-me img {
+	display: inline-block;
+	vertical-align: top;
+	max-width: 300px;
+	max-height: 300px;
+	width: 30%;
+	@include border-radius(100%);
+
+	@include mobile {
+		display: inline;
+		width: 100%;
+	}
+}
+
+#about-me .info {
+	display: inline-block;
+	vertical-align: top;
+	width: 61%;
+	margin-top: 20px;
+	margin-left: 7%;
+	margin-bottom: 40px;
+
+	@include tablet {
+		margin-top: 4px;
+	}
+
+	@include mobile {
+		display: block;
+		width: 100%;
+		margin-left: 0;
+	}
+
+ 	h1 {
+		font-size: 50px;
+		font-weight: normal;
+		color: $blue;
+		margin-bottom: 40px;
+
+		.sub {
+			display: block;
+			font-size: 30px;
+			font-weight: normal;
+			color: $mid-gray;
+			margin-top: 10px;
+		}
+	}
+
+	p {
+		letter-spacing: 1px;
+	}
+}
+
+.portfolio h2 {
+	text-transform: none;
+	font-weight: normal;
+	text-align: center;
+	font-size: 35px;
+	color: $dark-gray;
+	@include text-shadow(0, 0, 1px, rgba(0,0,0,.3));
+
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 60px;
+	padding-bottom: 0.35em;
+	border-bottom: 1px solid $light-gray;
+}
+
+.project {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 120px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&.info-first {
+		flex-direction: row-reverse;
+	}
+
+	@include tablet {
+		flex-direction: column;
+		margin-bottom: 100px;
+	}
+
+	.info {
+		width: 65%;
+		@include border-box;
+
+		@include tablet {
+			width: 100%;
+		}
+	}
+
+	&.info-first .info {
+		padding-right: 50px;
+
+		@include tablet {
+			padding: 20px 0 0 0;
+		}
+	}
+
+	&.image-first .info {
+		padding-left: 50px;
+
+		@include tablet {
+			padding: 20px 0 0 0;
+		}
+	}
+
+	.image {
+		width: 35%;
+		text-align: center;
+		@include border-box;
+
+		@include tablet {
+			width: 100%;
+		}
+	}
+}
+
+.project-grid {
+	display: flex;
+	flex-wrap: wrap;
+
+	@include tablet {
+		flex-direction: column;
+	}
+
+	.project {
+		display: block;
+		width: 50%;
+		margin-bottom: 50px;
+
+		@include tablet {
+			width: 100%;
+		}
+
+		.info {
+			width: 100%;
+			padding: 0 25px;
+			@include border-box;
+
+			@include tablet {
+				padding: 0;
+			}
+		}
+
+		h3 {
+			font-size: 1.5em;
+		}
+	}
+}
+
+.project h3 {
+	font-size: 32px;
+	margin-bottom: 0.6em;
+}
+
+.project p, ul {
+	font-family: $post-font;
+	text-align: justify;
+}
+
+.project li {
+	margin-bottom: 1.1em;
+}
+
+.project .highlights {
+	display: block;
+	margin-top: 2em;
+	margin-bottom: 1.2em;
+	color: $dark-gray;
+	@include text-shadow(0, 0, 1px, rgba(0,0,0,.2));
+}
+
+#more-projects {
+	display: block;
+	margin-top: 0.5em;
+	font-size: 1.1em;
+	text-align: center;
+}

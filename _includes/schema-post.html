@@ -17,6 +17,14 @@
 				"inLanguage": "{{ site.language }}"
 			},
 			{
+				"@type": "Person",
+				"@id": "{{ site.url }}/#person",
+				"name": "{{ site.author }}",
+				"sameAs": [
+					"{{ site.url }}"
+				]
+			},
+			{
 				"@type": "NewsArticle",
 				"@id": "{{ site.url }}{{ page.url }}#post",
 				"name": "{{ page.title }} | {{ site.title }}",
@@ -27,14 +35,10 @@
 				{%- endif -%}
 				"datePublished": "{{ page.date | date_to_xmlschema }}",
 				"author": {
-					"@type": "Person",
-					"@id": "{{ site.url }}/#person",
-					"name": "{{ site.author }}"
+					"@id": "{{ site.url }}/#person"
 				},
 				"publisher": {
-					"@type": "Person",
-					"@id": "{{ site.url }}/#person",
-					"name": "{{ site.author }}"
+					"@id": "{{ site.url }}/#person"
 				},
 				"isPartOf": {
 					"@id": "{{ site.url }}{{ page.url }}#webpage"

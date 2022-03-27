@@ -4,36 +4,106 @@ schema: person
 ---
 
 <div id="about-me" class="section section-intro">
-  <div class="container">
-    <img src="{{ site.baseurl }}/assets/img/albertoalcolea.jpg" alt="Alberto Alcolea - @albertoalcolea">
-    <div id="me">
-      <h1>Alberto Alcolea</h1>
-      <span id="sub">Developer and Music Lover</span>
-      <p>I'm a computer engineer. Passionate about new technologies, software engineering, data processing and the Web. Lover of *NIX systems.</p>
-    </div>
-  </div>
+	<div class="container">
+		<img src="{{ site.baseurl }}/assets/img/albertoalcolea.jpg" alt="Alberto Alcolea - @albertoalcolea">
+		<div class="info">
+			<h1>Alberto Alcolea
+				<span class="sub">Developer and Music Lover</span>
+			</h1>
+			<p>I'm a passionate about new technologies, software engineering, data processing and the Web. Lover of *NIX systems and the Open Source movement.</p>
+		</div>
+	</div>
 </div>
 
-<div id="portfolio" class="section section-gray">
-  <div class="container">
-    <h2>My work</h2>
-    <div class="project-list">
-      {% for project in site.data.projects %}
-        <div class="project">
-          <a href="{{ project.link }}" title="{{ project.name }}">
-            <figure class="frame">
-              <img src="{{ site.baseurl }}/assets/img/projects/{{ project.image }}" alt="{{ project.name }}">
-            </figure>
-            <h3>{{ project.name }}</h3>
-          </a>
-          <div class="tags">
-            {% for tag in project.tags %}
-              <span class="tag">{{ tag }}</span>
-            {% endfor %}
-          </div>
-          <p>{{ project.description | newline_to_br }}</p>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
+<div id="portfolio" class="section section-white portfolio">
+	<div class="container">
+		<h2>My work</h2>
+
+		<div class="project image-first">
+			<div class="image">
+				<img src="/assets/img/projects/datumize.jpg" alt="Datumize logo" />
+			</div>
+			<div class="info">
+				<h3><a href="https://www.datumize.com/" target="_blank" rel="nofollow">Datumize</a></h3>
+				<p>I am currently working as a software engineer at Datumize, developing, improving and maintaining the core product of the company, the Datumize Data Collector (DDC), a non-intrusive and modular system that allows capturing data from <em>complex sources</em> in real-time from within data centers and also physical premises.</p>
+				<p>I also work in the R&D process of new connectors for the DDC to integrate data from complex and uncommon systems like industrial devices or industrial networks.</p>
+				<span class="highlights">Highlights:</span>
+				<ul>
+					<li><strong>Deep packet inspection of industrial network protocols</strong>, such as Modbus, CanBus, OPC-DA or LonTalk; developing sniffers and custom-made clients which are <a href="https://www.datumize.com/machine-data" target="_blank" rel="nofollow">integrated inside the DDC</a> as connectors.</li>
+					<li><a href="https://docs.datumize.tech/docs/developer-guide/processor-components/dcom-parser-processor" target="_blank" rel="nofollow">Connectors</a> to <strong>collect data of applications that uses the Microsoft's DCOM protocol stack</strong> in a non-intrusive way.</li>
+					<li>I have rewritten an obsolete and abandoned <strong>Linux driver for a LonTalk network interface</strong> to be functional on modern Linux kernels.</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="project info-first">
+			<div class="image">
+				<img src="/assets/img/projects/kampal.jpg" alt="Kampal Research screenshot" />
+			</div>
+			<div class="info">
+				<h3><a href="https://www.kampal.com/" target="_blank" rel="nofollow">Kampal</a></h3>
+				<p>I worked for 3 years as a full-stack developer at this spin-off of the University of Zaragoza, which develops tools that add value to traditional statistics using complex network analysis techniques.</p>
+				<p>During the time I was working there I was focused in two projects: Kampal Social, which analyze the social impact of topics or brands in social networks; and Kampal Research, a tool for measuring and visualizing the scientific production of researchers and their interaction.</p>
+				<span class="highlights">Highlights:</span>
+				<ul>
+					<li>I designed and developed a system capable of <strong>ingesting and processing the 10% of Twitter</strong> in near real-time through the <a href="https://developer.twitter.com/en/docs/twitter-api/enterprise/decahose-api/overview/decahose" target="_blank" rel="nofollow">Twitter Decahose stream</a>.</li>
+					<li>I developed a simple, but effective enough and fast, <a href="https://es.slideshare.net/aragonopendata/tcnicas-de-anlisis-de-datos-de-redes-sociales" target="_blank" rel="nofollow">algorithm</a> to <strong>determine the positivity or negativity of a sentence</strong> using Natural Language Processing (NLP).</li>
+					<li>The spanish national <strong>TV channel (TVE) showed our results</strong> generated in near real-time during the broadcast of the <a href="https://www.rtve.es/play/videos/eurovision/objetivo-eurovision-2016-1/3608394/" target="_blank" rel="nofollow">Eurovision Song Contest 2016</a>.</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="project image-first">
+			<div class="image">
+				<img src="/assets/img/projects/aosd.jpg" alt="Aragon Open Social Data screenshot" />
+			</div>
+			<div class="info">
+				<h3><a href="https://www.bifi.es/" target="_blank" rel="nofollow">Institute for Biocomputation and Physics of Complex Systems (BIFI)</a></h3>
+				<p>I worked at the Institute for Biocomputation and Physics of Complex Systems (BIFI) as a student-trainee on the project <a href="https://opendata.aragon.es/servicios/open-social-data/" target="_blank" rel="nofollow">Aragón Open SocialData</a> of the Government of Aragon.</p>
+				<p>It was my <a href="https://zaguan.unizar.es/record/14610?ln=es" target="_blank" rel="nofollow">final degree project</a> and <strong>it is still in production since 2014</strong>.</p>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div id="personal-projects" class="section section-gray portfolio">
+	<div class="container">
+		<h2>Personal projects</h2>
+
+		<div class="project-grid">
+			<div class="project">
+				<div class="info">
+					<h3><a href="https://github.com/albertoalcolea/gmailsync" target="_blank">gmailsync</a></h3>
+					<p>Command-line tool developed in Python to synchronize and save a backup of your Gmail messages.</p>
+				</div>
+			</div>
+
+			<div class="project">
+				<div class="info">
+					<h3><a href="https://github.com/albertoalcolea/dbhelpers" target="_blank">dbhelpers</a></h3>
+					<p>A set of utilities to make your life easier when working with raw db connections in Python using the Python Database API Specification.</p>
+				</div>
+			</div>
+
+			<div class="project">
+				<div class="info">
+					<h3><a href="https://github.com/albertoalcolea/okr-management" target="_blank">okr-management</a></h3>
+					<p>Web application to define, record and visualize the progress of your OKRs (Objectives and Key Results), that help you to improve your productivity and meet your personal goals.</p>
+				</div>
+			</div>
+
+			<div class="project">
+				<div class="info">
+					<h3><a href="https://github.com/borjaeg/SpaceAppMadrid" target="_blank">Energy2People</a></h3>
+					<p>Interactive data visualization and extraction system for the selection of wealthy renewable resources areas.</p>
+					<p><strong>Winner of the 2013 NASA International Space Apps Challenge in Madrid.</strong></p>
+				</div>
+			</div>
+		</div>
+
+		<span id="more-projects">
+			<a href="https://github.com/albertoalcolea" target="_blank">See more on Github <i class="fa fa-github" aria-hidden="true"></i></a>
+		</span>
+	</div>
 </div>

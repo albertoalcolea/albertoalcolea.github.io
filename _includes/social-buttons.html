@@ -2,12 +2,12 @@
   <ul class="list-inline">
     {% for social in site.data.social %}
       <li>
-        <a href="{{ social.url }}" title="{{ site.name }} on {{ social.name }}">
-          <span class="fa-stack fa-lg" aria-hidden="true" title="{{ site.name }} on {{ social.name }}">
+        <a href="{{ social.url }}" title="{{ site.title }} on {{ social.name }}" target="_blank" rel="nofollow">
+          <span class="fa-stack fa-lg" aria-hidden="true" title="{{ site.title }} on {{ social.name }}">
             <i class="fa fa-square fa-stack-2x"></i>
             <i class="fa {{ social.icon }} fa-stack-1x fa-inverse"></i>
           </span>
-          <span class="sr-only">{{ site.name }} on {{ social.name }}</span>
+          <span class="sr-only">{{ site.title }} on {{ social.name }}</span>
         </a>
       </li>
     {% endfor %}
