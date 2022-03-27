@@ -140,6 +140,7 @@
 
 		@include tablet {
 			width: 100%;
+			padding-bottom: 10px;
 		}
 	}
 }
@@ -182,7 +183,8 @@
 	margin-bottom: 0.6em;
 }
 
-.project p, ul {
+.project p,
+.project ul {
 	font-family: $post-font;
 	text-align: justify;
 }
