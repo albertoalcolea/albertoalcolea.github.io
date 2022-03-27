@@ -194,9 +194,26 @@
 	margin-top: 32px;
 }
 
-.social-share .stButton {
-	@include mobile {
-		margin-bottom: 4px;
+.social-share {
+	position: relative;
+
+	img {
+		margin: 0;
+	}
+
+	.share-msg {
+		display: block;
+		position: absolute;
+		right: 130px;
+		height: 32px;
+		font-size: 0.85em;
+		color: $mid-gray;
+		line-height: 32px;
+
+		@include mobile {
+			left: 0;
+			right: 0;
+		}
 	}
 }
 
