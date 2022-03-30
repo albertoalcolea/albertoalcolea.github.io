@@ -33,6 +33,7 @@
 	@include mobile {
 		display: inline;
 		width: 100%;
+		margin-bottom: 1em;
 	}
 }
 
@@ -62,7 +63,7 @@
 
 		.sub {
 			display: block;
-			font-size: 30px;
+			font-size: 0.6em;
 			font-weight: normal;
 			color: $mid-gray;
 			margin-top: 10px;
@@ -186,7 +187,6 @@
 .project p,
 .project ul {
 	font-family: $post-font;
-	text-align: justify;
 }
 
 .project li {
