@@ -68,6 +68,14 @@ p, ul, ol {
 	background-color: $white;
 }
 
+.page-content {
+	.section:first-child {
+		@include mobile {
+			padding-top: 55px;
+		}
+	}
+}
+
 header {
 	position: fixed;
 	right: 0;
