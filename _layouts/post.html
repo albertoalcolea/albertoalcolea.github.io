@@ -7,6 +7,10 @@ layout: default
 		<article class="post">
 			<h1 class="title">{{ page.title }}</h1>
 
+			{% if page.image %}
+				<img class="header-image" src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}" />
+			{% endif %}
+
 			<div class="entry">
 				{{ content }}
 			</div>
@@ -25,7 +29,7 @@ layout: default
 
 			{% if site.related_posts != empty %}
 			<div class="related">
-				<h3>Related posts</h3>
+				<span class="related-title">Related posts</span>
 				<ul>
 					{% for post in site.related_posts limit:5 %}
 						<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>

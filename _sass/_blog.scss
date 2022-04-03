@@ -41,29 +41,36 @@
 	}
 
 	h3 {
-		font-size: 1.6em;
-	}
-
-	h4 {
-		font-size: 1.4em;
-	}
-
-	h5 {
 		font-size: 1.3em;
 	}
 
+	h4 {
+		font-size: 1.1em;
+	}
+
+	h5 {
+		font-size: 1.05em;
+	}
+
 	h6 {
-		font-size: 1.2em;
+		font-size: 1em;
 	}
 
 	h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, .highlight {
 		margin-bottom: 20px;
 	}
 
+	img.header-image {
+		margin-top: -20px;
+		margin-bottom: 40px;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
 	img {
 		display: block;
 		height: auto;
-		margin: 1em 0;
+		margin: 1em auto;
 		max-width: 100%;
 	}
 
@@ -95,6 +102,14 @@
 		}
 	}
 
+	code {
+		font-family: $monospaced-font;
+		font-size: 16px;
+		padding: 0.2em 0.4em;
+		background-color: rgba(27,31,35,0.05);
+		@include border-radius(3px);
+	}
+
 	.highlight > pre {
 		color: #f8f8f2;
 		margin-top: 18px;
@@ -104,6 +119,7 @@
 		line-height: normal;
 		letter-spacing: normal;
 		overflow: auto;
+		tab-size: 4;
 
 		code {
 			padding: 0;
@@ -155,11 +171,12 @@
 .related {
 	margin-top: 40px;
 
-	h3 {
+	.related-title {
+		display: block;
+		font-family: $sans-serif-font;
 		font-size: 22px;
-		font-weight: normal;
 		color: $mid-gray;
-		margin-top: 0;
+		margin-bottom: 20px
 	}
 
 	ul {
