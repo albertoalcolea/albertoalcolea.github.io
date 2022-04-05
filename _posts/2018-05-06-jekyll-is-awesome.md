@@ -1,6 +1,7 @@
 ---
-title:  "Jekyll is awesome!"
-date:   2018-05-06 19:00:00 +0100
+title:   Jekyll is awesome!
+date:    2018-05-06 19:00:00 +0100
+excerpt: Jekyll is a fantastic tool to create static web pages from plain text files. It has some useful plugins for almost anything and can also be extended with a lot of external services for adding forms, comments, etc.
 ---
 Jekyll is a fantastic tool to create static web pages from plain text files.
 It is written in Ruby and forms part of a set of tools known as Static Site Generators like [Pelican](https://github.com/getpelican/pelican), [Hyde](https://github.com/hyde/hyde), [Sculpin](https://sculpin.io) and [much more](https://github.com/myles/awesome-static-generators).
