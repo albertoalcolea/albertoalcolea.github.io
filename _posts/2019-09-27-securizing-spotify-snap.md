@@ -1,6 +1,7 @@
 ---
-title:  "Securizing Spotify Snap"
-date:   2019-09-27 19:45:00 +0200
+title:   Securizing Spotify Snap
+date:    2019-09-27 19:45:00 +0200
+excerpt: The snap version of Spotify may be insecure as it breaks the Snap sandbox exposing the user's home directory. In this guide I explain how we can reinforce the security and confine the application a little more.
 ---
 For some years now we can enjoy a fully functional [Spotify Linux client](https://www.spotify.com/us/download/linux/) without having the need to use a concrete distribution, third-party applications or hacks to get to use this music streaming service, whether we are premium users or not.
 

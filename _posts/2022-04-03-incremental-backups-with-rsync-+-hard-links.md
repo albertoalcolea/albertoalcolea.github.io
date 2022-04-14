@@ -1,8 +1,8 @@
 ---
-title: "Incremental backups with rsync + hard links"
-date: 2022-04-03 10:30 +0200
-image: /assets/img/posts/2022-04-03-backups/backup-strategy.jpg
-excerpt: "The combo rsync + hard links allows you to create on-site and off-site incremental backups on Linux, minimizing disk occupancy and allowing fast file recovery in case of disaster, that you can automate easily with a little sugar over those commands."
+title:   Incremental backups with rsync + hard links
+date:    2022-04-03 10:30 +0200
+image:   /assets/img/posts/2022-04-03-backups/backup-strategy.jpg
+excerpt: The combo rsync + hard links allows you to create on-site and off-site incremental backups on Linux, minimizing disk occupancy and allowing fast file recovery in case of disaster, that you can automate easily with a little sugar over those commands.
 ---
 
 > No one cares about backups until they lose something.
