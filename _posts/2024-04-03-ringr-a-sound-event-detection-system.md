@@ -55,7 +55,7 @@ Starting to work with audio on Linux is like trying to walk through a maze. Ther
 
 [PortAudio](https://www.portaudio.com/) is one of my favorite choices when it comes to prototyping something related to sound, as it is simple enough to get something working with a just a few lines of code and abstracts away all the underlying layers, providing a cross-platform API that allows for capturing and playing audio on many platforms, including Windows, MacOS and Linux.
 
-Furthermore, there iss a good binding of the library for Python: the [sounddevice](https://python-sounddevice.readthedocs.io/) library, which allows interaction with PortAudio and includes a set of interesting features such as automatic detection of compatible audio interfaces and their characteristics: sample rate, low and high latencies, etc. So that it was my go-to solution for this prototype.
+Furthermore, there is a good binding of the library for Python: the [sounddevice](https://python-sounddevice.readthedocs.io/) library, which allows interaction with PortAudio and includes a set of interesting features such as automatic detection of compatible audio interfaces and their characteristics: sample rate, low and high latencies, etc. So that it was my go-to solution for this prototype.
 
 ## ringr
 
